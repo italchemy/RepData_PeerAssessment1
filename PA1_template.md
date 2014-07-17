@@ -27,13 +27,14 @@ activity <- as.data.table(activity)
 
 ## What is mean total number of steps taken per day?
 
-The initial step in the analysis was to calculate the total steps taken per day. The results of the analysis are presented in the histogram below.
+The initial step in the analysis was to calculate the total steps taken per day; days with no data available were removed from the results. The results of the analysis are presented in the histogram below.
 
 
 ```r
 library(ggplot2)
 
-stepsPerDay <- activity[ , lapply(.SD, sum, na.rm=TRUE), by=date]
+stepsPerDay <- activity[ , lapply(.SD, sum), by=date]
+stepsPerDay <- stepsPerDay[!is.na(stepsPerDay$steps), ]
 
 ggplot(stepsPerDay, aes(steps)) + 
   geom_histogram(binwidth = max(stepsPerDay$steps) / 30) +
@@ -52,7 +53,7 @@ rawMean
 ```
 
 ```
-## [1] 9354
+## [1] 10766
 ```
 
 The median of the total steps per day for the data is:
@@ -64,7 +65,7 @@ rawMedian
 ```
 
 ```
-## [1] 10395
+## [1] 10765
 ```
 
 ## What is the average daily activity pattern?
@@ -165,7 +166,7 @@ completeMedian
 
 ### What is the impact of imputing missing data?
 
-Imputing missing step values impacted the analysis results by shifting the sample mean by -1411.9592 and the sample median by -371.1887.
+Imputing missing step values impacted the analysis results by shifting the sample mean by 0 and the sample median by -1.1887.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
