@@ -27,7 +27,7 @@ activity <- as.data.table(activity)
 
 ## What is mean total number of steps taken per day?
 
-The initial step in the analysis was to calculate the total steps taken per day; days with no data available were removed from the results. The results of the analysis are presented in the histogram below.
+The initial step in the analysis was to calculate the total steps taken per day; **days with no data available were removed to give a more accurate representation of the available data**. The results of the analysis are presented in the histogram below.
 
 
 ```r
