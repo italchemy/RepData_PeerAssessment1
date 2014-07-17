@@ -91,11 +91,11 @@ interval <- stepsPerInterval$interval[stepsPerInterval$steps == max(stepsPerInte
 hourOfDay <- trunc(interval / 60)
 minuteOfHour <- 60 * ((interval / 60) - hourOfDay)
 intervalText <- paste("Interval -->", interval)
-paste(intervalText, "(Time --> ", hourOfDay, ":", minuteOfHour, ")", sep="")
+paste(intervalText, " (Time: ", hourOfDay, ":", minuteOfHour, ")", sep="")
 ```
 
 ```
-## [1] "Interval --> 835(Time --> 13:55)"
+## [1] "Interval --> 835 (Time: 13:55)"
 ```
 
 ## Imputing missing values

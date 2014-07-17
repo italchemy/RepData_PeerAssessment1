@@ -271,10 +271,10 @@ ggplot(stepsPerInterval, aes(interval, steps)) +
 hourOfDay &lt;- trunc(interval / 60)
 minuteOfHour &lt;- 60 * ((interval / 60) - hourOfDay)
 intervalText &lt;- paste(&quot;Interval --&gt;&quot;, interval)
-paste(intervalText, &quot;(Time --&gt; &quot;, hourOfDay, &quot;:&quot;, minuteOfHour, &quot;)&quot;, sep=&quot;&quot;)
+paste(intervalText, &quot; (Time: &quot;, hourOfDay, &quot;:&quot;, minuteOfHour, &quot;)&quot;, sep=&quot;&quot;)
 </code></pre>
 
-<pre><code>## [1] &quot;Interval --&gt; 835(Time --&gt; 13:55)&quot;
+<pre><code>## [1] &quot;Interval --&gt; 835 (Time: 13:55)&quot;
 </code></pre>
 
 <h2>Imputing missing values</h2>
